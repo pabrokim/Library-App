@@ -9,8 +9,9 @@
     <script src="main.js" defer></script>
 </head>
 <body>
-    <h1>My Library App</h1>
-    <button class="toggle">Add a Book</button>
+    <div class="app">
+        <h1>My Library</h1>
+    <button class="toggle">+New Book</button>
     <form id="user-form" class="hide">
         <h3>Fill in the book form</h3>
         <div>
@@ -27,12 +28,13 @@
         </div>
         <div>
             <label for="read">Read?:</label>
-            <input type="text" id="read" placeholder="read or not read" required>
+            <input type="text" id="read" placeholder="true or false" required>
         </div> 
         <button id="submit" type="submit">Submit</button>
     </form>
-    <div class="container">
-        
-    </div>
+    <div class="container"></div>
+
+</div>
+    
 </body>
 </html>
