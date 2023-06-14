@@ -45,13 +45,35 @@ function displayBook(){
         let readElement = document.createElement('p');
         readElement.textContent = `Read: ${bookItem.read}`;
 
+        let toggleButton = document.createElement('button');
+        toggleButton.classList.add('btn');
+        toggleButton.textContent = 'Toggle Read Status';
+        toggleButton.addEventListener('click', () => toggleReadStatus(i));
+        
+        let removeButton = document.createElement('button');
+        removeButton.classList.add('btn');
+        removeButton.textContent = 'Remove';
+        removeButton.addEventListener('click', () => {removeBook(i)})
+
         card.appendChild(titleElement);
         card.appendChild(authorElement);
         card.appendChild(pageElement);
         card.appendChild(readElement);
+        card.appendChild(toggleButton);
+        card.appendChild(removeButton);
         container.appendChild(card);
     }
     
+}
+function toggleReadStatus(i) {
+    let bookItem = myLibrary[i];
+    bookItem.read = !bookItem.read; 
+    displayBook(); 
+  }
+
+function removeBook(i) {
+    myLibrary.splice(i, 1);
+    displayBook();
 }
  
 function toggleForm() {
@@ -64,3 +86,4 @@ submitButton.addEventListener('click', addBookToLibrary);
 
 let toggleButton = document.querySelector('.toggle');
 toggleButton.addEventListener('click', toggleForm);
+
