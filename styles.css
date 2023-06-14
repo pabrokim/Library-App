@@ -1,19 +1,22 @@
 
 body {
     font-size: 16px;
-    margin: 0 100px;
-    padding: 20px;
-    background-color: rgb(80, 214, 255);
+    margin-top: 5px;   
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+.app {
+    background-color: rgb(80, 214, 255);
+    margin: 0 100px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 5px solid rgb(221, 122, 235);
+}
 form {
-    
-    background-color: lightblue;
     width: 300px;
     padding: 10px;
     margin: 10px 0px;
     border-radius: 15px;
-    
+    border: 1px solid white;
 }
 input {
     margin: 5px;
@@ -23,21 +26,18 @@ input {
 .container {
     display: flex;
     gap: 10px;
-    flex-wrap: wrap;
-    
+    flex-wrap: wrap;  
 }
 .card {
-    background-color: rgb(61, 59, 59);
-    color: white;
+    color: black;
     padding: 10px;
     border-radius: 5px;
     font-weight: bold;
-    border: 1px solid blue;
-    width: 300px;
-
+    border: 1px solid white;
+    width: 383px;
 }
 #submit {
-    background-color: rgb(45, 124, 45);
+    background-color: rgb(45, 73, 124);
     padding: 5px;
     width: 100px;
     border-radius: 5px;
@@ -47,18 +47,17 @@ input {
 }
 #submit:hover {
     background-color: lightgreen;
+    color: black;
 }
-
-
 .toggle {
     font-size: 2rem;
     background-color: transparent;
     border-radius: 5px;
+    border: 1px solid white;
     outline: none;
     padding: 5px;
     font-weight: bold;
     margin-bottom: 10px;
-
 }
 h1 {
     text-align: center;
@@ -67,4 +66,14 @@ h1 {
 
 .hide {
     display: none;
+}
+.btn {
+    background-color: rgb(45, 73, 124);
+    padding: 5px;
+    width: 150px;
+    border-radius: 5px;
+    margin-top: 15px;
+    color: white;
+    font-weight: bold;
+    margin-right: 3px;
 }
