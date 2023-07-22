@@ -1,10 +1,52 @@
 let myLibrary = [];
 
+const inputField = document.querySelectorAll('input[type=text]');
+const numField = document.querySelector('input[type=number]');
+const form = document.querySelector('form');
+const error = document.querySelector('.error');
+
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
+}
+
+inputField.forEach((input) => {
+    const errorElement = input.nextElementSibling;
+    input.addEventListener('input', (e) => {
+        if(input.validity.valid){
+            errorElement.textContent = '';
+            errorElement.className = 'error';
+        }else {
+            showError(input, errorElement);
+        }
+    })
+})
+numField.addEventListener('input', (e) => {
+    const errorElement = numField.nextElementSibling;
+    if(numField.validity.valid){
+        error.textContent = '';
+        error.className = 'error';
+    }else {
+        showError(numField, errorElement);
+    }
+})
+form.addEventListener('submit', (e) => {
+    if(!inputField.validity.valid) {
+        showError();
+        e.preventDefault();
+       
+    }
+})
+function showError(field, errorElement){
+    if(field.validity.valueMissing){
+        errorElement.textContent = "Please populate this field";
+    }else if(field.validity.tooShort){
+        errorElement.textContent = "Text should be at least 3 characters"
+    }else if (field.validity.rangeUnderflow){
+        errorElement.textContent = "Pages should be at least 10";
+    }
 }
 
 function createBooks() {
