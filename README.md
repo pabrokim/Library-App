@@ -1,1 +1,2 @@
 # Library-App
+The Library App is a simple web application that allows users to manage their personal book collection digitally. Users can add books, edit book details, mark books as read or unread, and delete books from their library. 
